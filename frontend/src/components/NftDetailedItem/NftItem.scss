@@ -1,0 +1,35 @@
+.nft-detailed-item {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .information {
+    background-color: #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .opensea-link {
+    text-align: center;
+    padding: 12px 0;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    background-color: #1976d2;
+  }
+}

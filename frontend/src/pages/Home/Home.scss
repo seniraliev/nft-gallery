@@ -1,0 +1,19 @@
+@import "../../styles/mixins";
+
+.home-page {
+  padding: 20px;
+
+  .nft-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+
+    @include tablet() {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include mobile() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

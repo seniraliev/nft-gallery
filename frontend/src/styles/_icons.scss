@@ -1,0 +1,193 @@
+@import "./mixins";
+
+.icon {
+  &-rotate {
+    &--90 {
+      transform: rotate(90deg);
+    }
+    &--180 {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.spin {
+  width: 2.4rem;
+  height: 2.4rem;
+  background: transparent;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 0;
+  -webkit-animation: spin2 1s linear infinite;
+  animation: spin 1s linear infinite;
+  & > div:not(.spin__blocker) {
+    width: 50%;
+    height: 50%;
+    z-index: -1;
+  }
+  &__blocker {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    &--black {
+      background-color: var(--base-background--01);
+    }
+    &--grey {
+      background-color: var(--base-background--08);
+    }
+  }
+  &__top-left {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: -webkit-linear-gradient(
+      top left,
+      rgba($color: #6abb7c, $alpha: 0.3) 0%,
+      rgba($color: #72b62b, $alpha: 0.6) 100%
+    );
+    background: linear-gradient(
+      to bottom right,
+      rgba($color: #6abb7c, $alpha: 0.3) 0%,
+      rgba($color: #72b62b, $alpha: 0.6) 100%
+    );
+  }
+  &__bottom {
+    &-left {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: -webkit-linear-gradient(
+        top left,
+        rgba($color: #72b62b, $alpha: 1) 0%,
+        rgba($color: #72b62b, $alpha: 0.8) 100%
+      );
+      background: linear-gradient(
+        to bottom right,
+        rgba($color: #72b62b, $alpha: 1) 0%,
+        rgba($color: #72b62b, $alpha: 0.8) 100%
+      );
+    }
+    &-right {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: -webkit-linear-gradient(
+        bottom left,
+        rgba($color: #72b62b, $alpha: 0.75) 0%,
+        rgba($color: #72b62b, $alpha: 0.6) 100%
+      );
+      background: linear-gradient(
+        to top right,
+        rgba($color: #72b62b, $alpha: 0.75) 0%,
+        rgba($color: #72b62b, $alpha: 0.6) 100%
+      );
+    }
+  }
+}
+
+.spinning {
+  &:hover {
+    -webkit-animation: spin2 1s linear infinite;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.eth {
+  path {
+    fill: var(--text-primary);
+  }
+  &.eth--only-black {
+    path {
+      fill: #222222;
+    }
+  }
+  &.eth--only-white {
+    path {
+      fill: #ffffff;
+    }
+  }
+  &.dark {
+    path {
+      fill: var(--text-white);
+    }
+    &.eth--only-black {
+      path {
+        fill: #222222;
+      }
+    }
+    &.eth--only-white {
+      path {
+        fill: #ffffff;
+      }
+    }
+  }
+  &.black {
+    path {
+      fill: #18191d;
+    }
+  }
+}
+.black-to-white {
+  path {
+    fill: var(--simple-black);
+  }
+}
+.white-to-grey {
+  path,
+  rect {
+    fill: var(--main-element-bg);
+  }
+}
+
+.diamond-circle {
+  &--super {
+    .light {
+      fill: var(--primary-medium-green);
+    }
+    .medium {
+      fill: var(--primary-green);
+    }
+    .dark {
+      fill: #9bbb4c;
+    }
+  }
+  &--silver {
+    .light {
+      fill: var(--alerts-sky);
+    }
+    .medium {
+      fill: #87b1ff;
+    }
+    .dark {
+      fill: #6a99f0;
+    }
+  }
+  &--gold {
+    .light {
+      fill: #ffebd6;
+    }
+    .medium {
+      fill: var(--alerts-orange);
+    }
+    .dark {
+      fill: #f29538;
+    }
+  }
+}
